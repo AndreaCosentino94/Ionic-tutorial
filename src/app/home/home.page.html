@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="main-page"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Git Users
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-slides class="myClass" [option]="option">
+    <ion-slide  *ngFor="let user of users">
+      <ion-card class="myCard">
+        <a [routerLink]="['/mycard/' + user.login]" title="{{ user.login }}">
+          <img class="myImg" src="{{user.avatar_url}}">
+        </a>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-searchbar animated (ionChange)="filter($event)"></ion-searchbar>
+  <ion-item *ngFor="let user of users | myfilter: textFilt: 'login'" 
+    (click)="userSelected(user)"
+    [routerLink]="['/mycard/' + user.login]">
+    <ion-avatar>
+      <img src="{{user.avatar_url}}">
+    </ion-avatar>
+    <ion-label> {{ user.login }} </ion-label>
+  </ion-item>
+</ion-content>

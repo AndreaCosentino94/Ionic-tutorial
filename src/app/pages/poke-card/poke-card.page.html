@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="pokemon"></ion-back-button>
+    </ion-buttons>
+    <ion-title>pokeCard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="myCrd">
+    <ion-card-header class="myCrd">
+      <ion-card-title>{{currentPokemon?.name}}</ion-card-title>
+      <img style="width: 70%; height: auto; margin: 0 auto;" src="{{image?.front_default}}">
+      <ion-card-subtitle>Pokemon exp:  <ion-badge  color="light">{{currentPokemon?.base_experience}}</ion-badge></ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Height: {{currentPokemon?.height}}
+      Weitght: {{currentPokemon?.weight}}
+      Abilities: <h3 *ngFor="let abilities of skill">==> {{abilities.name}}</h3>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

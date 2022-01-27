@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="main-page"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pokemon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--<ion-slides class="myClass" [option]="option">
+    <ion-slide  *ngFor="let image of myImage">
+      <ion-card class="myCard">
+        <a [routerLink]="['/pokemon/' + pokemon.id]">
+          <img class="myImg" src="{{image.front_default}}">
+        </a>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>-->
+
+  <ion-item-group>
+    <span *ngFor="let item of container">
+      <ion-item-divider color="primary">{{item.letter | uppercase}}</ion-item-divider>
+      <ion-item *ngFor="let pokemon of item.values"
+        (click)="itemSelected(pokemon)"
+        [routerLink]="['/pokemon/' + pokemon.id]"> 
+        <ion-label>{{ pokemon.name }}</ion-label>
+      </ion-item>
+    </span>
+  </ion-item-group>
+</ion-content>

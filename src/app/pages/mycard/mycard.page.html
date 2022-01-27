@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{userList?.login}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{userList?.name}}</ion-card-title>
+      <img src="{{userList?.avatar_url}}">
+      <ion-card-subtitle>FROM: {{userList?.location}}</ion-card-subtitle>
+      <ion-card-subtitle>FOLLOWERS: {{userList?.followers}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Keep close to Nature's heart...
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+</ion-content>

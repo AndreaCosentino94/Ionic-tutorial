@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="comics"></ion-back-button>
+    </ion-buttons>
+    <ion-title>comicsPage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let mycom of myComics">
+    <ion-card-header>
+      <ion-card-subtitle>{{mycom.id}}</ion-card-subtitle>
+      <img src="{{mycom.thumbnail.path}}.jpg" alt="{{mycom.title}}" title="{{mycom.title}}">
+      <ion-card-title>{{mycom.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{mycom.description}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,10 @@
+.mySpan{
+  padding: 20px;
+  transition: transform;
+  transition-duration: 0.5s;
+}
+a:hover{
+  .mySpan{
+  transform: translateX(5px) scale(1.2);
+  }
+}

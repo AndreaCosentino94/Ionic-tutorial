@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="main-page"></ion-back-button>
+    </ion-buttons>
+    <ion-title>comics</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="row">
+    <div class="column" *ngFor="let comics of allComics">
+      <!--<ion-text color="light">{{comics.title}}</ion-text>-->
+      <a [routerLink]="['/comics/' + comics.id]">
+        <img src="{{comics.thumbnail.path}}.jpg" alt="{{comics.title}}">
+      </a>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,29 @@
+.myCard{
+    width: 70%;
+    height: 70%;
+    box-shadow: none;
+    border-radius: 12px;
+    animation: example 50s linear 0.5s infinite alternate;
+    @keyframes example {
+    from {right:0}
+    to {right:1500%}
+  }
+  .myImg{
+    object-fit: cover;
+    width: 100%;
+    transform: scale(1, 1) rotate(0.7deg);
+    transition: 600ms all ease-in-out;
+  }
+}
+.swiper-slide-active{
+  transform: scale(1.05, 1.05);
+  .myCard{
+    .myImg{
+      transform: scale(1, 1);
+    }
+  }
+}
+.swiper-slide{
+  transition: 400ms all ease-in-out;
+}
+

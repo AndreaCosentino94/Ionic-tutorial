@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <a [routerLink]="['/home/']">
+      <ion-button expand="block">Git Users<span class="mySpan">></span></ion-button>
+    </a>   
+    <a [routerLink]="['/pokemon/']">
+      <ion-button expand="block">Pokemon<span class="mySpan">></span></ion-button>
+    </a>
+    <ion-button expand="block" (click)="chek()">MARVEL<span class="mySpan">></span></ion-button>
+    <a [routerLink]="['/marvel/']">
+      <ion-button *ngIf="bool">Characters<span class="mySpan">></span></ion-button>
+    </a> 
+    <a [routerLink]="['/comics/']">
+      <ion-button *ngIf="bool">Comics<span class="mySpan">></span></ion-button>
+    </a>
+</ion-content>
+

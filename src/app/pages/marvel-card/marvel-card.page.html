@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="marvel"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Marvel Card</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let char of marvelChar">
+    <ion-card-header>
+      <ion-card-title>{{char.name}}</ion-card-title>
+      <img src="{{char.thumbnail.path}}.jpg" alt="{{char.name}}">
+    </ion-card-header>
+    <ion-card-content>
+      {{char.description}}
+    </ion-card-content>
+    <a href="{{char.urls[0].url}}" target="_blank">
+      <ion-button>Details</ion-button>
+    </a>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="main-page"></ion-back-button>
+    </ion-buttons>
+    <ion-title>MARVEL Characters</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides class="myClass" [option]="option">
+    <ion-slide  *ngFor="let character of allCharacters">
+      <ion-card class="myCard">
+        <a [routerLink]="['/marvel/' + character.id]">
+          <img class="myImg" src="{{character.thumbnail.path}}.jpg"  title="{{ character.name }}">
+        </a>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-item *ngFor="let character of allCharacters"
+    [routerLink]="['/marvel/' + character.id]">
+    <ion-avatar>
+      <img src="{{character.thumbnail.path}}.jpg">
+    </ion-avatar>
+    <ion-text color="dark">{{ character.name }}</ion-text>
+  </ion-item>
+</ion-content>
