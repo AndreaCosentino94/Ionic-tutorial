@@ -145,7 +145,7 @@ export class MyUserService {
 
   publicKey= 'INSERT HERE YOUR PUBLIC KEY';
   //for public key you need to subscribe at https://developer.marvel.com/
-  hash = 'INSERT HERE YOUR PUBLIC HASH';
+  hash = 'INSERT HERE YOUR HASH';
   // for hash follow the suggestion on the site
   
   urlCharacters= `https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=${this.publicKey}&hash=${this.hash}`;
