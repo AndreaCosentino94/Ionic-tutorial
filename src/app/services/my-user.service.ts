@@ -143,8 +143,11 @@ export interface RootObject {
 })
 export class MyUserService {
 
-  publicKey= '66b3a47567d0addf80e714e7b42cc207';
-  hash = 'fb1e3a527c572045af9df617181dda8c';
+  publicKey= 'INSERT HERE YOUR PUBLIC KEY';
+  //for public key you need to subscribe at https://developer.marvel.com/
+  hash = 'INSERT HERE YOUR PUBLIC HASH';
+  // for hash follow the suggestion on the site
+  
   urlCharacters= `https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=${this.publicKey}&hash=${this.hash}`;
   
   urlComics=`https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=${this.publicKey}&hash=${this.hash}`;
